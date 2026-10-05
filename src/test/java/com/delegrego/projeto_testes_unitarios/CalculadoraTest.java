@@ -34,4 +34,15 @@ public class CalculadoraTest {
 
 	}
 
+	@Test
+	void deveLancarExcecaoQuandoNomeForNuloOuVazio() {
+
+		// Arrange
+		String nome = "         "; // Ou null
+
+		// Act e assert
+		Assertions.assertThatThrownBy(() -> Calculadora.saudar(nome)).isInstanceOf(RuntimeException.class)
+				.hasMessage("Nome inválido");
+	}
+
 }

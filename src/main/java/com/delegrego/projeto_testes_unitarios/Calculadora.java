@@ -7,6 +7,9 @@ public class Calculadora {
 	}
 
 	public static String saudar(String nome) {
+		if (nome == null || nome.isBlank()) {
+			throw new RuntimeException("Nome inválido");
+		}
 		return "Olá, " + nome;
 	}
 }
